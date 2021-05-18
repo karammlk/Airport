@@ -16,12 +16,19 @@
 //Prototypes
 
 int People();
+
 int Passenger();
+
 void America();
+
 void Europe();
+
 void Africa();
+
 int Employee();
+
 void Get_statistcis();
+
 void Check_name();
 
 int main()
