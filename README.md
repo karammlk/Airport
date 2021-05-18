@@ -43,6 +43,7 @@ int main()
 // function that desplay the main menu 
 int People()
 {
+	
 	int number, counter;
 	
 	printf("1. passenger\n");
@@ -85,6 +86,7 @@ int People()
 //Function to choose destenation to travel to
 int Passenger()
 {
+	
 	int number, counter;
 	
 	printf("Select where do you want to go ?\n");
@@ -139,6 +141,7 @@ int Passenger()
 // America function to check the valdity of visa number then save at the file if valid or inform passenger the visa in invalid
 void America()
 {
+	
 	char Traveler_name[20];
 	int Visa_number, Test, Test1, counter = 0;
 	
@@ -180,6 +183,7 @@ void America()
 //Check schengen number then decide the country
 void Europe()
 {
+	
 	int Number_of_Schengen, counter = 0;
 	
 	FILE *Europef;
@@ -217,6 +221,7 @@ void Europe()
 //Draw the location where to go
 void Africa()
 {
+	
 	printf("Please move to this location");
 	
 	int location[200][400], Rows, columns;
@@ -240,6 +245,7 @@ void Africa()
 //Check password , give three times then open the selection menu
 int Employee()
 {
+	
 	int Number, counter, comparison;
 	char password[10];
 	
@@ -310,6 +316,7 @@ int Employee()
 // Draw colum for each destenation that represent the percentage of travelers to all travelers
 void Get_statistcis()
 {
+	
 	int Number_of_passenger[200][600], Rows, columns;
 	double Number_of_travelers_to_America, Number_of_travelers_to_Europe, Number_of_travelers_to_Africa, Avg_America, Avg_Europe, Avg_Africa, Sum;
 	char pointer;
@@ -399,6 +406,7 @@ void Get_statistcis()
 // Search for a name in the file Names, then print if the passenger can travel or not
 void Check_name()
 {
+	
 	char names[20], name_test[20];
 	int travel, comparison;
 	
