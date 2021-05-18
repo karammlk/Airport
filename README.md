@@ -33,6 +33,7 @@ void Check_name();
 
 int main()
 {
+	
 	printf("** Welcome to International Queen Alia Airport **\n");
 	People();
 	
