@@ -1,10 +1,8 @@
-//Queen Alia Airport Project
-
 #include <stdio.h>
 #include <string.h>
 #include "foc_fa21.h"
 
-//Prototypes
+// Prototypes
 int People();
 int Passenger();
 void America();
