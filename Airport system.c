@@ -12,8 +12,7 @@ int Employee();
 void Get_statistcis();
 void Check_name();
 
-int main()
-{
+int main() {
 	printf("** Welcome to International Queen Alia Airport **\n");
 	People();
 	
@@ -21,8 +20,7 @@ int main()
 }
 
 // function that desplay the main menu 
-int People()
-{
+int People() {
 	int number, counter;
 	
 	printf("1. passenger\n");
@@ -32,8 +30,7 @@ int People()
 	scanf("%d",&number);
 	
 	counter = 0;
-	while(number != 1 && number != 2 && number !=3 && counter < 2)
-	{
+	while(number != 1 && number != 2 && number !=3 && counter < 2) {
 		printf("Invalid number\n");
 		printf("1. Passenger\n");
 		printf("2. Employee\n");
@@ -42,8 +39,7 @@ int People()
 		scanf("%d",&number);
 		counter++;
 	}
-	switch(number)
-	{
+	switch(number) {
 		case 1 :
 		printf("**********************************************\n");
 		printf("Passenger\n");
@@ -63,8 +59,7 @@ int People()
 }
 
 //Function to choose destenation to travel to
-int Passenger()
-{
+int Passenger() {
 	int number, counter;
 	
 	printf("Select where do you want to go ?\n");
@@ -76,8 +71,7 @@ int Passenger()
 	scanf("%d",&number);
 	
 	counter = 0;
-	while(number != 1 && number != 2 && number != 3 && number != 4 && counter <2)
-	{
+	while(number != 1 && number != 2 && number != 3 && number != 4 && counter <2) {
 		printf("Invalid number\n");
 		printf("select a choice > %d\n",number);
 		printf("Select where do you want to go ?\n");
@@ -88,8 +82,7 @@ int Passenger()
 		printf("select a choice > ");
 		scanf("%d",&number);
 	}
-	switch(number)
-	{
+	switch(number) {
 		case 1 :
 		printf("**********************************************\n");
 		printf("America\n");
@@ -117,8 +110,7 @@ int Passenger()
 }
 
 // America function to check the valdity of visa number then save at the file if valid or inform passenger the visa in invalid
-void America()
-{
+void America() {
 	char Traveler_name[20];
 	int Visa_number, Test, Test1, counter = 0;
 	
@@ -134,19 +126,16 @@ void America()
 	if(Visa_number < 10000 || Visa_number >= 100000)
 		printf("Your visa is invalid\n");
 	
-	else
-	{
+	else {
 		Test = Visa_number / 100;
 	
 		if(Test != 123)
 			printf("Your visa is invalid\n");
 	
-		else
-		{
+		else {
 			Test1 = Visa_number % 100;
 			
-			if(Test1 <= 80 && Test1 >= 50)
-			{
+			if(Test1 <= 80 && Test1 >= 50) {
 				printf("Please move to counter number four \n");			
 				fprintf(Americaf, "first name : %s / Visa number = %d\n", Traveler_name, Visa_number);
 			}
@@ -158,8 +147,7 @@ void America()
 }
 
 //Check schengen number then decide the country
-void Europe()
-{
+void Europe() {
 	int Number_of_Schengen, counter = 0;
 	
 	FILE *Europef;
@@ -171,23 +159,19 @@ void Europe()
 	if(Number_of_Schengen < 10)
 		printf("Invalid Schengen number\n");
 	
-	else if(Number_of_Schengen >= 10 && Number_of_Schengen < 100)
-	{
+	else if(Number_of_Schengen >= 10 && Number_of_Schengen < 100) {
 		printf("Germany, Window 10\n");
 		fprintf(Europef, "Schengen number is : %d\n" ,Number_of_Schengen);
 	}
-	else if(Number_of_Schengen >= 100 && Number_of_Schengen < 1000)
-	{
+	else if(Number_of_Schengen >= 100 && Number_of_Schengen < 1000) {
 		printf("Italy, Window 11\n");
 		fprintf(Europef, "Schengen number is : %d\n" ,Number_of_Schengen);
 	}
-	else if(Number_of_Schengen >= 1000 && Number_of_Schengen < 10000)
-	{
+	else if(Number_of_Schengen >= 1000 && Number_of_Schengen < 10000) {
 		printf("Spain, Window 12\n");
 		fprintf(Europef, "Schengen number is : %d\n" ,Number_of_Schengen);
 	}	
-	else
-	{
+	else {
 		printf("Greece, Window 13\n");
 	 	fprintf(Europef, "Schengen number is : %d\n" ,Number_of_Schengen);
 	}
@@ -195,16 +179,14 @@ void Europe()
 }
 
 //Draw the location where to go
-void Africa()
-{
+void Africa() {
 	printf("Please move to this location");
 	
 	int location[200][400], Rows, columns;
 	
-	for(Rows = 0; Rows < 200; Rows++)
-	{
-		for(columns = 0; columns < 400; columns++)
-		{
+	for(Rows = 0; Rows < 200; Rows++) {
+		
+		for(columns = 0; columns < 400; columns++) {
 			location[Rows][columns] = 0;
 			
 			if(Rows == 100 || columns == 200)
@@ -213,13 +195,13 @@ void Africa()
 			if(Rows >= 40.31 && Rows <= 60.31 && columns > 320.290 && columns <= 340.290)
 				location[Rows][columns] = 255;
 		}
+		
 	}
 	showArray(200,400,location);
 }
 
 //Check password , give three times then open the selection menu
-int Employee()
-{
+int Employee() {
 	int Number, counter, comparison;
 	char password[10];
 	
@@ -229,8 +211,7 @@ int Employee()
 	comparison = strcmp("admin",password);
 	
 	counter = 1;
-	while(comparison != 0 && counter < 3)
-	{
+	while(comparison != 0 && counter < 3) {
 		printf("Password != %s\n",password);
 		printf("Please enter the password : ");
 		scanf("%s",password);
@@ -241,8 +222,7 @@ int Employee()
 	if(comparison != 0)
 		printf("Invalid password\n");
 	
-	else
-	{
+	else {
 		printf("1.Get statistcis\n");
 		printf("2.Check name\n");
 		printf("3.Back\n");
@@ -250,8 +230,7 @@ int Employee()
 		scanf("%d",&Number);
 		
 		counter = 1;
-		while(Number != 1 && Number != 2 && Number != 3 && counter < 3)
-		{
+		while(Number != 1 && Number != 2 && Number != 3 && counter < 3) {
 			printf("Invalid number\n");
 			printf("1.Get statistcis\n");
 			printf("2.Check name\n");
@@ -260,8 +239,7 @@ int Employee()
 			scanf("%d",&Number);
 			counter++;
 		}
-		switch(Number)
-		{
+		switch(Number) {
 			case 1 :
 			printf("***************************************\n");
 			printf("Get statistcis\n");
@@ -288,8 +266,7 @@ int Employee()
 
 //Calculate the number of travelers from the files of each destenation
 // Draw colum for each destenation that represent the percentage of travelers to all travelers
-void Get_statistcis()
-{
+void Get_statistcis() {
 	int Number_of_passenger[200][600], Rows, columns;
 	double Number_of_travelers_to_America, Number_of_travelers_to_Europe, Number_of_travelers_to_Africa, Avg_America, Avg_Europe, Avg_Africa, Sum;
 	char pointer;
@@ -334,10 +311,8 @@ void Get_statistcis()
 	printf("To continue input a number : ");
 	scanf("%d",&Break);
 	
-	for(Rows = 0; Rows < 200; Rows++)
-	{
-		for(columns = 0; columns < 600; columns++)
-		{
+	for(Rows = 0; Rows < 200; Rows++) {
+		for(columns = 0; columns < 600; columns++) {
 			Number_of_passenger[Rows][columns] = 255;
 			
 			if(Rows <= 200 && Rows >= 100 && columns >= 100 && columns <= 120)
@@ -377,8 +352,7 @@ void Get_statistcis()
 }
 
 // Search for a name in the file Names, then print if the passenger can travel or not
-void Check_name()
-{
+void Check_name() {
 	char names[20], name_test[20];
 	int travel, comparison;
 	
@@ -391,15 +365,12 @@ void Check_name()
 	if(Namef == NULL)
 	printf("Error! couldn't open file");
 	
-	else
-	{
-		while(!feof(Namef))
-		{
+	else {
+		while(!feof(Namef)) {
 			fscanf(Namef, "%s %d\n" ,names, &travel);
 			comparison = strcmp(name_test, names);
 			
-			if(comparison == 0)
-			{
+			if(comparison == 0) {
 				if(travel == 1)
 					printf("The passenger can travel\n");
 				
@@ -408,10 +379,10 @@ void Check_name()
 				
 			}
 			if(comparison == 0)
-			break;
+				break;
 		}
 		if(comparison != 0)
-		printf("The passenger not found\n");
+			printf("The passenger not found\n");
 	}
 	fclose(Namef);
 }
